@@ -2,6 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import _ from "lodash";
 import './App.css';
+import Navigation from "./navigation";
+import Contact from "./Contact";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
@@ -184,6 +187,15 @@ const App = () => {
   };
 
   return (
+
+    <div className="nav">
+    <Router>
+    <Navigation />
+    <Switch>
+      <Route path="/contact" exact component={() => <Contact />} />
+    </Switch>
+  </Router>
+
     <div className="container">
       <h1 className="headline-primary">My Hacker Stories</h1>
 
@@ -206,6 +218,7 @@ const App = () => {
       ) : (
         <List list={stories.data} onRemoveItem={handleRemoveStory} />
       )}
+    </div>
     </div>
   );
 };

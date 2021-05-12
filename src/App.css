@@ -8,6 +8,15 @@
   color: #171212;
 }
 
+.nav {
+  height: 30vw;
+
+  background: #003c96; /* fallback for old browsers */
+  background: linear-gradient(to left, #003c96, #021533);
+
+  color: #171212;
+}
+
 .headline-primary {
   font-size: 48px;
   font-weight: 300;
